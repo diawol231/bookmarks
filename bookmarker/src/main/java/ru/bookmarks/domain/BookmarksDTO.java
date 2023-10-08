@@ -9,7 +9,7 @@ import org.springframework.data.domain.Page;
 @Setter
 @Getter
 public class BookmarksDTO {
-  private List<Bookmark> data;
+  private List<BookmarkDTO> data;
   private int totalElements;
   private int totalPages;
   private int currentPage;
@@ -20,7 +20,7 @@ public class BookmarksDTO {
   private boolean hasNext;
   private boolean hasPrevious;
 
-  public BookmarksDTO(Page<Bookmark> bookmarksPage){
+  public BookmarksDTO(Page<BookmarkDTO> bookmarksPage){
     this.setData(bookmarksPage.getContent());
     this.setTotalElements(bookmarksPage.getNumberOfElements());
     this.setTotalPages(bookmarksPage.getTotalPages());
