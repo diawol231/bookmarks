@@ -38,7 +38,7 @@ jobs:
 
     - if: ${{ github.ref == 'refs/heads/main' }}
       name: Build and Publish Docker Image
-      run:
+      run: |
         mvn clean package spring-boot:build-image -Dspring-boot-image.imageName=Bookmarks-api
         echo ${{ secrets.DOCKER_USERNAME }}
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
